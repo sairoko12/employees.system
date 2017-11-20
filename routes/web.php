@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('/employees')->group(function () {
+	Route::get('/add', function () {
+		return view('employees.add');
+	});
+});
