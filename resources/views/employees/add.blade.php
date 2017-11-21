@@ -41,16 +41,16 @@
 			    <input type="text" class="form-control" id="street" name="street" required>
   			</div>
   			<div class="form-group">
-			    <label for="interior">Número Interiro</label>
-			    <input type="text" class="form-control" id="interior" name="interior" required>
+			    <label for="interior">Número Interior</label>
+			    <input type="text" class="form-control" id="interior" name="interior">
   			</div>
   			<div class="form-group">
 			    <label for="neighborhood">Colonia</label>
-			    <input type="text" class="form-control" id="neighborhood" name="neighborhood" required>
+			    <input type="text" class="form-control" id="neighborhood" name="neighborhood">
   			</div>
   			<div class="form-group">
-			    <label for="municipality">Municipio</label>
-			    <input type="text" class="form-control" id="municipality" name="municipality" required>
+			    <label for="municipality">Municipio / Delegación</label>
+			    <input type="text" class="form-control" id="municipality" name="municipality">
   			</div>
   			<div class="form-group">
 			    <label for="zip_code">Código Postal</label>
@@ -58,7 +58,7 @@
   			</div>
   			<div class="form-group">
 			    <label for="city">Ciudad</label>
-			    <input type="text" class="form-control" id="city" name="city" required>
+			    <input type="text" class="form-control" id="city" name="city">
   			</div>
   			<div class="form-group">
 			    <label for="state">Estado</label>
