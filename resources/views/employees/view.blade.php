@@ -58,7 +58,7 @@
 		                        				<td>{{ $address->address->city }}</td>
 		                        				<td>{{ $address->address->state }}</td>
 		                        				<td>
-		                        					<button style="cursor: pointer;" data-toggle="modal" data-target="#see-map" data-address="{{ $address->address->id }}" class="btn btn-light btn-sm">
+		                        					<button style="cursor: pointer;" data-toggle="modal" data-target="#see-map" data-address="{{ $address->address->id }}" class="btn btn-warning btn-sm">
   														<i class="fa fa-map" aria-hidden="true"></i>
   													</button>
 		                        				</td>

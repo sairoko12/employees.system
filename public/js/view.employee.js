@@ -55,7 +55,7 @@ $(document).ready(function(e) {
 		e.stopPropagation();
 
 		var employee = $("#employee-id").val();
-		console.log(employee);
+		
 		$.ajax({
 			url: '/employees/address/' + employee,
 			type: 'POST',

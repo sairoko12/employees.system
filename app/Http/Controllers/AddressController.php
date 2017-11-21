@@ -18,15 +18,13 @@ class AddressController extends Controller
 		}
 
 		$googleKey = config('services.google.publicKey');
-		error_log($googleKey);
+		
 		$concatAddress = [
 			$address->street_name,
 			$address->neighborhood,
 			$address->municipality, 
 			$address->zip_code,
-			$address->city, 
-			$address->state,
-			"México"
+			$address->city
 		];
 		
 		$queryParams = [
