@@ -31,6 +31,25 @@ $(document).ready(function(e) {
 		modal.find('.modal-body input[name="employee"]').val(employee);
 	});
 
+	$('#see-map').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget);
+		var addressId = button.data('address');
+
+		var modal = $(this);
+
+		$.ajax({
+			url: "/addresses/map/" + addressId,
+			type: "GET",
+			dataType: "json",
+			error: onError,
+			success: function(response) {
+				if (response.success) {
+					modal.find("#map").attr('src', response.url);
+				}
+			}
+		});
+	});
+
 	$("#add-address-form").submit(function(e) {
 		e.preventDefault();
 		e.stopPropagation();

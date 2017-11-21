@@ -43,6 +43,7 @@
 	                        				<td>Código Postal</td>
 	                        				<td>Ciudad</td>
 	                        				<td>Estado</td>
+	                        				<td>&nbsp;</td>
 	                        			</tr>
 	                      			</thead>
 	                      			<tbody>
@@ -56,6 +57,11 @@
 		                        				<td>{{ $address->address->zip_code }}</td>
 		                        				<td>{{ $address->address->city }}</td>
 		                        				<td>{{ $address->address->state }}</td>
+		                        				<td>
+		                        					<button style="cursor: pointer;" data-toggle="modal" data-target="#see-map" data-address="{{ $address->address->id }}" class="btn btn-light btn-sm">
+  														<i class="fa fa-map" aria-hidden="true"></i>
+  													</button>
+		                        				</td>
 		                  					</tr>
 	                  					@endforeach
 	                      			</tbody>
@@ -119,6 +125,14 @@
 					<button type="submit" class="btn btn-primary">Guardar</button>
 				</div>
 		      </form>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade" tabindex="-1" role="dialog" id="see-map" aria-labelledby="" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		    	<iframe id="map" width="auto" height="600" frameborder="0" style="border:0;" src="" allowfullscreen></iframe>
 		    </div>
 		  </div>
 		</div>

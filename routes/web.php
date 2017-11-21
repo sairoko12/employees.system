@@ -33,4 +33,6 @@ Route::prefix('/addresses')->group(function () {
 	Route::get('/add', function() {
 		return view('address.add', ['employees' => \App\Models\Employee::all()]);
 	});
+
+	Route::get('/map/{address}', 'AddressController@seeMap');
 });

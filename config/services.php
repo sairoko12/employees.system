@@ -35,4 +35,7 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'publicKey' => 'AIzaSyAH2nA6LUETNiQJwF9D28KgtY0UsNyzCDU'
+    ]
 ];
