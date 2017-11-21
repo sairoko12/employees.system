@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.20)
 # Base de datos: employees
-# Tiempo de Generación: 2017-11-20 6:30:34 a. m. +0000
+# Tiempo de Generación: 2017-11-21 3:03:58 a. m. +0000
 # ************************************************************
 
 
@@ -28,14 +28,14 @@ DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `street_name` varchar(150) NOT NULL DEFAULT '',
-  `interior_number` varchar(50) DEFAULT NULL,
-  `neighborhood` varchar(150) DEFAULT NULL,
-  `municipality` varchar(150) DEFAULT NULL,
+  `interior_number` varchar(50) DEFAULT '',
+  `neighborhood` varchar(150) NOT NULL DEFAULT '',
+  `municipality` varchar(150) NOT NULL DEFAULT '',
   `zip_code` varchar(5) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
+  `city` varchar(100) NOT NULL DEFAULT '',
   `state` varchar(100) DEFAULT NULL,
-  `latitude` varchar(200) DEFAULT NULL,
-  `altitude` varchar(200) DEFAULT NULL,
+  `latitude` varchar(200) NOT NULL DEFAULT '',
+  `altitude` varchar(200) NOT NULL DEFAULT '',
   `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

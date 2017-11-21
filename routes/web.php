@@ -16,7 +16,21 @@ Route::get('/', function () {
 });
 
 Route::prefix('/employees')->group(function () {
+	Route::get('/', function () {
+		return view('employees.view', ['employees' => \App\Models\Employee::all()]);
+	});
+
 	Route::get('/add', function () {
 		return view('employees.add');
+	});
+
+	Route::post('/add', 'EmployeeController@add');
+
+	Route::post('/address/{id}', 'EmployeeController@addAddress');
+});
+
+Route::prefix('/addresses')->group(function () {
+	Route::get('/add', function() {
+		return view('address.add', ['employees' => \App\Models\Employee::all()]);
 	});
 });

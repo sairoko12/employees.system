@@ -21,42 +21,22 @@ function onError(err) {
 }
 
 $(document).ready(function(e) {
-	$("#new-employee").submit(function(e) {
-		e.preventDefault();
-		e.stopPropagation();
+	$('#add-address').on('show.bs.modal', function (event) {
+	  	var button = $(event.relatedTarget);
+	  	var employeeName = button.data('nombre');
+	  	var employee = button.data('employee');
 
-		$.ajax({
-			url: "/employees/add",
-			type: "POST",
-			data: $(this).serialize(),
-			dataType: "json",
-			beforeSend: function() {
-				$("#progress-employee").show();
-			},
-			complete: function() {
-				$("#progress-employee").hide();
-			},
-			success: function(response) {
-				$("#employee-id").val(response.employee);
-				$("#address-form").show();
-
-				var label = $("#address-form").children('h3').text();
-				var replace = label.replace(':name', response.employeeName);
-
-				$("#address-form").children('h3').text(replace);
-			},
-			error: onError
-		});
-
-		return false;
+		var modal = $(this);
+		modal.find('.modal-title').text('Agregar dirección para ' + employeeName);
+		modal.find('.modal-body input[name="employee"]').val(employee);
 	});
 
-	$("#address-form").submit(function(e) {
+	$("#add-address-form").submit(function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
 		var employee = $("#employee-id").val();
-
+		console.log(employee);
 		$.ajax({
 			url: '/employees/address/' + employee,
 			type: 'POST',
@@ -70,7 +50,7 @@ $(document).ready(function(e) {
 			},
 			success: function(response) {
 				if (response.success) {
-					location.href = "/employees";
+					location.reload();
 				}
 			},
 			error: onError
